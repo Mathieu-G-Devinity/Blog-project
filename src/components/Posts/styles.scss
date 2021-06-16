@@ -18,4 +18,19 @@
     display: flex;
     flex-wrap: wrap;
   }
+  &-zen-mode {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    &-title {
+    color: vars.$primary-color;
+    font-family: vars.$title-font;
+    font-weight: vars.$title-font-weight;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    }
+  }
 }

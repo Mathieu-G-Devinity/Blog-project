@@ -1,16 +1,28 @@
 import React from 'react';
-
+import TogglerZen from './TogglerZen';
+import PropTypes from 'prop-types';
 import './styles.scss';
 
-const Header = () => (
+const Header = ({ categoriesData, toggle }) => (
   <header className="menu">
     <nav>
-      <a className="menu-link menu-link--selected" href="">Accueil</a>
-      <a className="menu-link" href="">React</a>
-      <a className="menu-link" href="">Angular</a>
-      <button className="menu-btn" type="button">Activer le mode zen</button>
+      <a className="menu-link menu-link--selected" href="">{categoriesData[0].label}</a>
+      <a className="menu-link" href="">{categoriesData[1].label}</a>
+      <a className="menu-link" href="">{categoriesData[2].label}</a>
+      <TogglerZen toggle={toggle}/>
     </nav>
   </header>
 );
+
+Header.propTypes = {
+  categoriesData: PropTypes.arrayOf(
+    PropTypes.shape(
+      {
+        label: PropTypes.string.isRequired,
+      },
+    ),
+  ).isRequired,
+};
+
 
 export default Header;
