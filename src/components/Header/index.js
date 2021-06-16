@@ -1,15 +1,18 @@
 import React from 'react';
 import TogglerZen from './TogglerZen';
+import Link from './Link';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-const Header = ({ categoriesData, toggle }) => (
+const Header = ({ categoriesData, toggle, open }) => (
   <header className="menu">
     <nav>
-      <a className="menu-link menu-link--selected" href="">{categoriesData[0].label}</a>
-      <a className="menu-link" href="">{categoriesData[1].label}</a>
-      <a className="menu-link" href="">{categoriesData[2].label}</a>
-      <TogglerZen toggle={toggle}/>
+    {
+      categoriesData.map(
+        (category) => <Link key={category.label} {...category}/>,
+      )
+    }
+      <TogglerZen toggle={toggle} open={open}/>
     </nav>
   </header>
 );
@@ -22,6 +25,8 @@ Header.propTypes = {
       },
     ),
   ).isRequired,
+  open: PropTypes.bool.isRequired,
+  toggle: PropTypes.func.isRequired,
 };
 
 

@@ -39,6 +39,7 @@ Posts.propTypes = {
       },
     ),
   ).isRequired,
+  open: PropTypes.bool.isRequired,
 };
 
 export default Posts;

@@ -21,7 +21,8 @@ return (
 Post.propTypes = {
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
-    excerpt: PropTypes.string.isRequired, 
+    excerpt: PropTypes.string.isRequired,
+    open: PropTypes.bool.isRequired, 
 };
 
 export default Post;
