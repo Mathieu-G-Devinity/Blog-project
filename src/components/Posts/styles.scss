@@ -4,6 +4,13 @@
   max-width: 800px;
   margin: vars.$gutter auto;
 
+  // toutes les polices sont définies en em
+  // on impacte donc ici la taille de police de tous
+  // les élément enfant d'un élément ayant la classe .posts--zen
+  &--zen{
+    font-size: 1.5em;
+  }
+
   &-title {
     color: vars.$primary-color;
     font-family: vars.$title-font;
@@ -17,20 +24,5 @@
   &-list {
     display: flex;
     flex-wrap: wrap;
-  }
-  &-zen-mode {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-
-    &-title {
-    color: vars.$primary-color;
-    font-family: vars.$title-font;
-    font-weight: vars.$title-font-weight;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 3em;
-    margin-bottom: 0.5em;
-    }
   }
 }
